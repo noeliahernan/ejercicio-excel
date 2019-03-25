@@ -1,0 +1,6 @@
+Q0 [Test worker] INFO java.sql.Connection  - Creando conexiÃ³n y conectando...
+O41 [Test worker] INFO java.sql.Connection  - ConexiÃ³n creada correctamente
+d41 [Test worker] INFO com.ejercicio.dao.RegistrationSalesDaoImpl  - Preparando el resumen final...
+JRegion,Country,ItemType,Sales Channel,Order Priority,Order Date,Order ID
+0TEST,ESPAÃ‘A,,,,3/21/2019,2,3/21/2019,,,,,,
+

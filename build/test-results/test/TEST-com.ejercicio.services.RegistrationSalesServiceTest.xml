@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ejercicio.services.RegistrationSalesServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-03-21T15:08:29" hostname="LAP077" time="0.072">
+  <properties/>
+  <testcase name="getCountRegistration" classname="com.ejercicio.services.RegistrationSalesServiceTest" time="0.072"/>
+  <system-out><![CDATA[0 [Test worker] INFO java.sql.Connection  - Creando conexiÃ³n y conectando...
+41 [Test worker] INFO java.sql.Connection  - ConexiÃ³n creada correctamente
+41 [Test worker] INFO com.ejercicio.dao.RegistrationSalesDaoImpl  - Preparando el resumen final...
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
