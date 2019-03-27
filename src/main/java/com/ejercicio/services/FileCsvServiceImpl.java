@@ -14,8 +14,10 @@ import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Properties;
 import java.util.stream.Collectors;
@@ -84,7 +86,9 @@ public class FileCsvServiceImpl implements FileCsvService {
             p.load(new FileReader("src/properties/config.properties"));
 
             //Creamos un buffer para escribir el fichero
-            BufferedWriter writer = Files.newBufferedWriter(Paths.get(p.getProperty("pathNuevoCsv")));
+            LocalDateTime date = LocalDateTime.now();
+            String dateNow= date.toString().replace(":","").replace("-","");
+            BufferedWriter writer = Files.newBufferedWriter(Paths.get(p.getProperty("pathNuevoCsv") + "RegistroVentas_" + dateNow + ".csv"));
 
             //Indicamos las cabeceras del fichero y recorremos la lista de registro para escribir cada registro
             CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT

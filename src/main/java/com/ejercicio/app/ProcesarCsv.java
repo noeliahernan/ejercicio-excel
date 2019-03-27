@@ -1,7 +1,6 @@
 package com.ejercicio.app;
 
 import com.ejercicio.beans.RegistrationSalesBean;
-import com.ejercicio.dao.RegistrationSalesDaoImpl;
 import com.ejercicio.interfaces.service.FileCsvService;
 import com.ejercicio.interfaces.service.RegistrationSalesService;
 import com.ejercicio.services.FileCsvServiceImpl;
@@ -25,6 +24,7 @@ public class ProcesarCsv {
                 //Importamos el fichero csv y lo convertimos en una lista de objetos RegistroVenta
                 List<RegistrationSalesBean> registrationSalesBeanList = fileCsvService.readExcelFile(args[0]);
                 //Ordenamos la lista de registros por OrderId ascendente de menor orderId a mayor
+                //registrationSalesBeanList = registrationSalesBeanList.stream().sorted(Comparator.comparingLong(RegistrationSalesBean::getOrderId).reversed()).collect(Collectors.toList());
                 registrationSalesBeanList = registrationSalesBeanList.stream().sorted(Comparator.comparingLong(RegistrationSalesBean::getOrderId)).collect(Collectors.toList());
                 //Insertamos en base datos
                 registrationSalesService.insertRegistrationSales(registrationSalesBeanList);
